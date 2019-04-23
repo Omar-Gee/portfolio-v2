@@ -3,7 +3,7 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   background: #141414;
   font-family: IBM Plex Sans;
@@ -28,19 +28,75 @@
   display: flex;
   list-style: none;
 }
+
+
 .listItem {
-  padding: 24px;
-  text-decoration: none;
+  position: relative;
+  margin-right: 30px;
   font-family: IBM Plex Sans;
   font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: right;
-  letter-spacing: -0.1px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
   color: $footer-link-color;
 }
-.listItem:hover{
-  color: $footer-link-hover;
+.listItem::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: $footer-link-color;;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.listItem:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  color: $header-link-hover;
+}
+.listItem:hover {
+  color: $header-link-color;
+  cursor: pointer;
 }
 
+@media(max-width: 425px) {
+  .container {
+    display: inherit;
+    text-align: center;
+  }
+  .list {
+    margin: 48px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .listItem {
+    padding: 0px;
+  }
+}
+@media(max-width: 375px) {
+  .container {
+    width: 100%;
+  }
+  .listItem {
+    margin:0;
+  }
+}
+
+@media(max-width: 320px) {
+  .container {
+    width: 100%;
+  }
+  .listItem {
+    margin:0;
+  }
+}

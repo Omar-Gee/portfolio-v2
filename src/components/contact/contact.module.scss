@@ -101,7 +101,7 @@
 }
 .list {
   list-style: none;
-  width: 225px;
+  width: fit-content;
 }
 .listTitle {
   font-family: IBM Plex Sans;
@@ -135,7 +135,7 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.1px;
-
+  text-decoration: none;
   color: #FF8364;
 }
 .link:hover {
@@ -149,4 +149,54 @@
 .iconLink:hover {
   color: #FF8364;
 
+}
+
+@media(max-width: 425px) {
+  .container {
+    display: unset;
+    text-align: -webkit-center;
+  }
+  .leftContent {
+    margin: 0;
+  }
+  .rightContent {
+    margin: 88px 0;
+    padding: 0;
+  }
+  .innerList {
+    justify-content: center;
+    margin: 8px 0;
+  }
+  .listTitle {
+    margin: 4px 0;
+  }
+  .button {
+    margin-top: 24px;
+  }
+  .text {
+    margin: 24px auto;
+    width: 240px;
+  }
+  .input {
+    width: 240px;
+  }
+  .textArea {
+    width: 240px;
+  }
+}
+
+@media(max-width: 320px) {
+  .leftContent {
+    width: 100%;
+  }
+  .text {
+    margin: 24px auto;
+    width: 240px;
+  }
+  .input {
+    width: 240px;
+  }
+  .textArea {
+    width: 240px;
+  }
 }

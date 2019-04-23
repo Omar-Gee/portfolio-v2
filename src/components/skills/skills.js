@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { container, mainTitle, title, list, listItem, skillGroup, middleGroup, groupContainer } from "./skills.module.scss"
+import { container, title, list, listItem, skillGroup, middleGroup, groupContainer } from "./skills.module.scss"
 
 const skills = () => {
   return (
-    <section className={container}>
+    <section className={container} id="skills">
       <div className={groupContainer}>
         <div className={skillGroup}>
           <h2 className={title}>Front-end</h2>

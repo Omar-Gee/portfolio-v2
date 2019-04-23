@@ -6,10 +6,10 @@ import { container, title, list, listItem, text, leftContent, rightContent, pbwL
 const experienceTwo = () => {
   return (
     <section className={container}>
-    <div className={rightContent}>
+    <div className={leftContent}>
         <img className={image} src={pblogo} alt="Palmera bytes logo" />
       </div>
-      <div className={leftContent}>
+      <div className={rightContent}>
         <h1 className={title}>Palmera Bytes Website</h1>
         <ul className={list}>
           <li className={listItem}>Gatsby</li>

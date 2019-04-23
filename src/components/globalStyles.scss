@@ -14,10 +14,10 @@ $main-text-color: #BABABA;
   padding:0;
   background: $background-color;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   width: 90%;
   margin: auto;
-}
-img {
-  width: inherit;
 }
