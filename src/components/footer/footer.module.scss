@@ -1,0 +1,46 @@
+@import "../globalStyles.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: #141414;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  height: 118px;
+}
+.text {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+
+  color: #BABABA;
+}
+.list {
+  display: flex;
+  list-style: none;
+}
+.listItem {
+  padding: 24px;
+  text-decoration: none;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: -0.1px;
+  color: $footer-link-color;
+}
+.listItem:hover{
+  color: $footer-link-hover;
+}
+

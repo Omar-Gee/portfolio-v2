@@ -1,0 +1,23 @@
+$background-color: #141414;
+
+$header-link-color: #FFFFFF;
+$header-link-hover: #FF8364;
+
+$footer-link-color: #FF8364;
+$footer-link-hover: #FFFFFF;
+
+$title-color: #FFFFFF;
+$main-text-color: #BABABA;
+
+* {
+  margin:0 ;
+  padding:0;
+  background: $background-color;
+}
+body {
+  width: 90%;
+  margin: auto;
+}
+img {
+  width: inherit;
+}

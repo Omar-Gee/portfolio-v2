@@ -1,0 +1,57 @@
+@import "../globalStyles.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 420px;
+}
+.leftContent {
+  width: 635px;
+
+}
+.image {
+
+}
+.rightContent {
+  width: 445px;
+  height:200px;
+  display: contents;
+}
+.title {
+  color: $title-color;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+}
+.list {
+  display: flex;
+  color: white;
+  list-style: none;
+}
+.listItem {
+  // border-right: 2px solid white;
+  margin: 16px 8px 16px 0;
+  padding-right: 16px;
+  color: $footer-link-color;
+  font-family: IBM Plex Sans;
+  letter-spacing: -0.2px;
+}
+.text {
+  color: $main-text-color;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.2px;
+}
+
+.pbwLink {
+  text-decoration: none;
+  color: $footer-link-color;
+  font-style: italic;
+}

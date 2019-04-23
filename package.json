@@ -10,16 +10,33 @@
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-source-prismic": "^2.3.0-alpha.3",
     "gatsby-transformer-sharp": "^2.1.18",
+    "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.6.1",
+    "storybook": "^1.0.0",
+    "styled-components": "^4.2.0",
+    "typeface-ibm-plex-sans": "0.0.61"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "dotenv": "^7.0.0",
+    "prettier": "^1.16.4",
+    "@storybook/react": "^5.0.10",
+    "@storybook/addon-actions": "^5.0.10",
+    "@storybook/addon-links": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@storybook/addon-storysource": "^5.0.6",
+    "@storybook/addon-viewport": "^5.0.6",
+    "@storybook/addon-knobs": "^5.0.6",
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5"
   },
   "keywords": [
     "gatsby"
@@ -31,13 +48,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
