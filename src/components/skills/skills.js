@@ -3,12 +3,13 @@ import styled from "styled-components"
 // import { container, title, list, listItem, skillGroup, middleGroup, groupContainer } from "./skills.module.scss"
 
 const Container = styled.div`
-background: #000;;
-padding: 64px 0;
-color: #fff;
-@media(max-width: 425px) {
-  clear: left;
-}
+  background: #000;;
+  padding: 64px 0;
+  color: #fff;
+  @media(max-width: 425px) {
+    padding: 16px 0
+    clear: left;
+  }
 `
 const GroupContainer = styled.div`
   display: flex;
@@ -16,9 +17,7 @@ const GroupContainer = styled.div`
   align-items: center;
   @media(max-width: 425px) {
     display: unset;
-
   }
-
 `
 const Title = styled.h1`
 margin: 8px 0 32px 0;
@@ -62,8 +61,8 @@ const ListItem = styled.li`
 
 const skills = () => {
   return (
-    <section id="skills">
-      <Container>
+    <section>
+      <Container id="skills">
         <GroupContainer>
           <SkillGroup>
             <Title>Front-end</Title>

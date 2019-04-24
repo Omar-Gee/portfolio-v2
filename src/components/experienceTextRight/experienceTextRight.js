@@ -30,6 +30,18 @@ const LeftContent = styled.div`
     margin: auto;
     margin: 88px auto;
   }
+  @media(max-width: 425px) {
+
+    margin: 80px auto;
+    margin-top: 140px;
+  }
+  @media(max-width: 320px) {
+
+    margin: 40px auto;
+    margin-top: 140px;
+  }
+
+
 `
 const RightContent = styled.div`
   width: 635px;
@@ -40,6 +52,7 @@ const RightContent = styled.div`
   @media(max-width: 768px){
     width: 100%;
   }
+
 `
 const Image = styled.img`
   width: inherit;
@@ -83,11 +96,17 @@ const ListItem = styled.li`
   font-family: IBM Plex Sans;
   letter-spacing: -0.2px;
   @media(max-width: 425px) {
-    width: 164px;
+    width: 188px;
     margin: auto;
     float: left;
     padding: 8px 0;
   }
+  @media(max-width: 375px) {
+    width: 163px;
+  }
+  @media(max-width: 320px) {
+    width: 136px;
+}
 `
 const Anchor = styled.a`
   color: #FF8364;

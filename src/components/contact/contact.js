@@ -72,6 +72,9 @@ transition: all 0.3s ease;
   @media(max-width: 425px){
     width: 280px;
   }
+  @media(max-width: 320px){
+    width: 224px;
+  }
 `
 const TextArea = styled.textarea`
 padding: 16px 0 0 32px;
@@ -89,6 +92,9 @@ transition: all 0.3s ease;
   }
   @media(max-width: 425px){
     width: 280px;
+  }
+  @media(max-width: 320px){
+    width: 224px;
   }
 `
 const Button = styled.button`

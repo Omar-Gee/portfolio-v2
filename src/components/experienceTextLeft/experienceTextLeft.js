@@ -32,6 +32,10 @@ const LeftContent = styled.div`
     top: 95px;
     width:100%
   }
+  @media(max-width: 768px) {
+    top: 140px;
+  }
+
 `
 const RightContent = styled.div`
   max-width: 445px;
@@ -78,6 +82,7 @@ const Text = styled.p`
   }
 `
 const List = styled.ul`
+  margin-top: 102px;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -95,12 +100,17 @@ const ListItem = styled.li`
   letter-spacing: -0.2px;
 
   @media(max-width: 425px) {
-    width: 164px;
+    width: 188px;
     margin: auto;
     float: left;
     padding: 8px 0;
   }
-
+  @media(max-width: 375px) {
+    width: 163px;
+  }
+  @media(max-width: 320px) {
+        width: 136px;
+  }
 `
 
 const experienceOne = () => {

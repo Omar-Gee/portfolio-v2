@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-
+import pic from "../../images/analysis-coffee-cup-1549702.jpg"
 const Container =  styled.div`
   background: #000;
   display: flex;
@@ -88,7 +88,7 @@ const intro = () => {
           </Text>
         </LeftContent>
         <RightContent >
-          <Image  src="https://images.pexels.com/photos/7369/startup-photos.jpg" alt="" />
+          <Image  src={pic} alt="" />
         </RightContent>
       </Container>
 
