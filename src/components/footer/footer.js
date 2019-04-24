@@ -42,7 +42,14 @@ const List = styled.ul`
     padding: 0;
     position: relative;
     top: -59px;
-    left: -12px;
+
+  }
+
+  @media(max-width: 375px){
+
+  }
+  @media(max-width: 320px){
+
   }
 `
 const ListItem = styled.li`
@@ -72,6 +79,15 @@ const ListItem = styled.li`
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     color: #FF8364;
+  }
+  @media(max-width: 425px){
+    margin-left:0;
+  }
+  @media(max-width: 375px){
+    margin-left:0;
+  }
+  @media(max-width: 320px){
+    margin-left:0;
   }
 
 `

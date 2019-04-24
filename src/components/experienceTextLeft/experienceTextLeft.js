@@ -44,7 +44,7 @@ const RightContent = styled.div`
   }
   @media(max-width: 768px) {
     position: relative;
-    top: -372px;
+    top: -263px;
     margin: auto;
   }
   @media(max-width: 425px) {
@@ -82,7 +82,7 @@ const Text = styled.p`
   }
 `
 const List = styled.ul`
-  margin-top: 102px;
+
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -91,8 +91,6 @@ const List = styled.ul`
     display: list-item;
     margin: auto;
   }
-
-
 `
 const ListItem = styled.li`
   color: orange;
