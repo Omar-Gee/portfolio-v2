@@ -13,12 +13,21 @@ const Container = styled.div`
   line-height: 24px;
   letter-spacing: -0.1px;
   height: 118px;
+  @media(min-width: 1500px){
+    justify-content: space-evenly;
+  }
+  @media(max-width: 425px) {
+    display: unset;
+  }
 `
 const List = styled.ul`
   padding: 0;
   display: flex;
   list-style: none;
   justify-content: space-evenly;
+  @media(max-width: 425px) {
+    justify-content: space-between;
+  }
 `
 const ListItemLeft = styled.li`
   position: relative;
@@ -45,6 +54,9 @@ const ListItemLeft = styled.li`
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     color: #FF8364;
+  }
+  @media(max-width: 425px) {
+    margin: 0;
   }
 `
 
@@ -74,6 +86,9 @@ const ListItemRight = styled.li`
     transform: scaleX(1);
     color: #FF8364;
   }
+  @media(max-width: 425px) {
+    margin: 0;
+  }
 `
 const Anchor = styled.a`
   text-decoration: none;
@@ -89,19 +104,23 @@ const Anchor = styled.a`
 `
 
 const Button = styled.button`
-background: #000;
-border: none;
-font-weight: bold;
-text-decoration: none;
-color: #FFF;
-line-height: normal;
-letter-spacing: 0.4px;
-text-transform: uppercase;
-font-size: 14px;
-&:hover {
-  color: #FF8364;
-  cursor: pointer;
-}
+  background: #000;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  &:hover {
+    color: #FF8364;
+    cursor: pointer;
+  }
+  @media(max-width: 425px) {
+    margin: 0;
+    padding: 0;
+  }
 `
 const Header = () =>{
   const handleThemeChange = (e) => {

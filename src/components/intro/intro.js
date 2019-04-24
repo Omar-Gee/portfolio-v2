@@ -5,10 +5,24 @@ const Container =  styled.div`
   background: #000;
   display: flex;
   justify-content: space-between;
-  // margin-top: 90px;
-  // margin-bottom: 160px;
+  align-items: center;
   padding: 90px 0 160px 0;
   color: white;
+  @media(min-width: 1500px){
+    justify-content: space-evenly;
+  }
+  @media(max-width: 1024px) {
+    justify-content: space-between;
+    padding: 0;
+  }
+  @media(max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 104px;
+  }
+
 `
 const LeftContent = styled.div`
   width: 540px;
@@ -20,6 +34,12 @@ const RightContent = styled.div`
   margin-left: 15px;
   background: #212121;
   border-radius: 8px;
+  @media(max-width: 1024px) {
+    zoom: 0.6;
+  }
+  @media(max-width: 768px) {
+    display: none;
+  }
 `
 const Image = styled.img`
   height: inherit;

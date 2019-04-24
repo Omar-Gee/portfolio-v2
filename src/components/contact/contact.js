@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import {FaTwitter, FaInstagram, FaGithub} from "react-icons/fa"
+import {FaTwitter, FaGithub} from "react-icons/fa"
 import { useState } from "react";
 
 const Container = styled.div`
@@ -14,14 +14,30 @@ const Container = styled.div`
   font-weight: normal;
   line-height: 24px;
   letter-spacing: -0.1px;
+  @media(max-width: 768px){
+    justify-content: space-around;
+  }
+  @media(max-width: 425px){
+    display: unset;
+    text-align: center;
+  }
 `
 const LeftContent = styled.div`
   margin-right: 60px;
-
+  @media(max-width: 768px){
+    margin: 0;
+  }
 `
 const RightContent = styled.div`
-margin-left: 60px;
-padding-top: 168px;
+  margin-left: 60px;
+  padding-top: 168px;
+  @media(max-width: 768px){
+    margin: 0;
+  }
+  @media(max-width: 425px){
+    margin: 86px auto;
+    padding: 0px 0px;
+  }
 `
 const Title = styled.h1`
   font-weight: 500;
@@ -33,9 +49,12 @@ const Text = styled.p`
   color: #BABABA;
   width: 350px;
   height: 58px;
+  @media(max-width: 425px){
+    width: 100%
+  }
 `
 const Form = styled.form`
-display: inline-grid;
+  display: inline-grid;
 `
 const Input = styled.input`
 background: #212121;
@@ -49,7 +68,9 @@ margin: 5px 0;
 transition: all 0.3s ease;
   &:hover {
     box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
-
+  }
+  @media(max-width: 425px){
+    width: 280px;
   }
 `
 const TextArea = styled.textarea`
@@ -66,29 +87,30 @@ transition: all 0.3s ease;
     box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
 
   }
+  @media(max-width: 425px){
+    width: 280px;
+  }
 `
 const Button = styled.button`
-margin: 10px 0;
-border: none;
-background: #FF8364;
-border-radius: 8px;
-width: 200px;
-height: 58px;
-
-
-font-weight: bold;
-font-size: 24px;
-line-height: 32px;
-letter-spacing: -0.4px;
-
-color: #FFFFFF;
-
-transition: all 0.3s ease;
-  &:hover {
-    background: #FFFFFF;
-    color: #6D6D6D;
-    box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
-
+  margin: 10px 0;
+  border: none;
+  background: #FF8364;
+  border-radius: 8px;
+  width: 200px;
+  height: 58px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+    &:hover {
+      background: #FFFFFF;
+      color: #6D6D6D;
+      box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
+    }
+  @media(max-width: 425px){
+    margin: 10px auto;
   }
 `
 const List = styled.ul`
@@ -96,35 +118,34 @@ const List = styled.ul`
   list-style: none;
 `
 const ListItem = styled.li`
-margin: 19px 0;
+  margin: 19px 0;
 `
 const ListTitle = styled.h1`
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.2px;
-text-transform: uppercase;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
 `
 const ListText = styled.p`
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: -0.1px;
+  font-size: 16px;
 `
 const InnerList = styled.ul`
-padding: 0;
-list-style: none;
-display: flex;
-justify-content: space-between;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  @media(max-width: 425px){
+    justify-content: center;
+  }
 `
 const InnerListItem = styled.li`
-
-color: #6D6D6D;
-font-size: 24px;
+  padding-top: 8px;
+  margin-right: 16px;
+  color: #6D6D6D;
+  font-size: 32px;
 `
 const Link = styled.a`
 font-family: IBM Plex Sans;
@@ -213,11 +234,6 @@ const contact = () => {
                 <InnerListItem>
                   <IconLink href="https://twitter.com/og_fresh_pots" target="_blank" rel="noopener noreferrer">
                     <FaTwitter />
-                  </IconLink>
-                </InnerListItem>
-                <InnerListItem>
-                  <IconLink href="https://twitter.com/og_fresh_pots" target="_blank" rel="noopener noreferrer">
-                    <FaInstagram />
                   </IconLink>
                 </InnerListItem>
                 <InnerListItem>

@@ -3,10 +3,10 @@ import styled from "styled-components"
 // import footerStyles from "./footer.module.scss"
 
 const Container = styled.div`
+padding-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background: #000;
   font-family: IBM Plex Sans;
   font-style: normal;
@@ -16,16 +16,34 @@ const Container = styled.div`
   letter-spacing: -0.1px;
   height: 118px;
   color: #fff;
+  @media(min-width: 1500px){
+    justify-content: space-evenly;
+  }
+  @media(max-width: 425px){
+    position: static;
+    display: unset;
+    text-align: center;
+  }
 `
 const Text = styled.p`
   line-height: 24px;
   letter-spacing: -0.1px;
   color: #BABABA;
+  @media(max-width: 425px){
+    position: relative;
+    top: 49px;
+  }
 `
 const List = styled.ul`
   display: flex;
   justify-content: space-between;
   list-style: none;
+  @media(max-width: 425px){
+    padding: 0;
+    position: relative;
+    top: -59px;
+    left: -12px;
+  }
 `
 const ListItem = styled.li`
   margin-left: 30px;

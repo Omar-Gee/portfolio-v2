@@ -6,11 +6,18 @@ const Container = styled.div`
 background: #000;;
 padding: 64px 0;
 color: #fff;
+@media(max-width: 425px) {
+  clear: left;
+}
 `
 const GroupContainer = styled.div`
-display: flex;
-justify-content: space-evenly;
-align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  @media(max-width: 425px) {
+    display: unset;
+
+  }
 
 `
 const Title = styled.h1`
@@ -23,7 +30,11 @@ line-height: 26px;
 letter-spacing: -0.2px;
 `
 const SkillGroup = styled.div`
-text-align: center;
+  text-align: center;
+  @media(max-width: 425px) {
+    margin: 16px 0;
+    padding: 24px 0;
+  }
 `
 // const MiddleGroup = styled.div`
 // text-align: center;
@@ -36,12 +47,17 @@ padding: 0;
 list-style: none;
 `
 const ListItem = styled.li`
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 30px;
-letter-spacing: -0.2px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.2px;
+  @media(max-width: 425px) {
+    padding: 8px 0;
+  }
+
+
 `
 
 const skills = () => {

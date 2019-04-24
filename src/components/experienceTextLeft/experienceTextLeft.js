@@ -9,13 +9,48 @@ const Container = styled.div`
   justify-content: space-between;
   color: #fff;
   background: #000;
+  @media(min-width: 1500px){
+    justify-content: space-evenly;
+  }
+  @media(max-width: 1023px){
+    justify-content: space-between;
+  }
+  @media(max-width: 768px) {
+    display: unset;
+    position: static;
+    text-align: center;
+  }
 `
 const LeftContent = styled.div`
   width: 635px;
   word-break: break-word;
+  @media(min-width: 1024px){
+    width: 560px;
+  }
+  @media(max-width: 768px) {
+    position: relative;
+    top: 95px;
+    width:100%
+  }
 `
 const RightContent = styled.div`
   max-width: 445px;
+  @media(max-width: 1024px) {
+    zoom: 0.6;
+  }
+  @media(max-width: 768px) {
+    position: relative;
+    top: -372px;
+    margin: auto;
+  }
+  @media(max-width: 425px) {
+    position: relative;
+    top: -663px;
+    left: -32px;
+    margin: auto;
+  }
+
+
 `
 const Image = styled.img`
 `
@@ -26,6 +61,9 @@ const Title = styled.h1`
   font-size: 20px;
   line-height: 26px;
   letter-spacing: -0.2px;
+  @media(max-width: 768px) {
+    display:none;
+  }
 `
 const Text = styled.p`
   color: #BABABA;
@@ -35,17 +73,34 @@ const Text = styled.p`
   font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.2px;
+  @media(max-width: 425px) {
+    float: left;
+  }
 `
 const List = styled.ul`
   padding: 0;
   display: flex;
   justify-content: space-between;
   list-style: none;
+  @media(max-width: 425px) {
+    display: list-item;
+    margin: auto;
+  }
+
+
 `
 const ListItem = styled.li`
   color: orange;
   font-family: IBM Plex Sans;
   letter-spacing: -0.2px;
+
+  @media(max-width: 425px) {
+    width: 164px;
+    margin: auto;
+    float: left;
+    padding: 8px 0;
+  }
+
 `
 
 const experienceOne = () => {

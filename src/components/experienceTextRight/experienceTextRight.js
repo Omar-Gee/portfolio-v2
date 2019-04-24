@@ -10,17 +10,40 @@ const Container = styled.div`
   justify-content: space-between;
   color: #fff;
   background: #000;
+  @media(min-width: 1500px){
+    justify-content: space-evenly;
+  }
+  @media(max-width: 1023px){
+    justify-content: space-between;
+  }
+  @media(max-width: 768px) {
+    display: unset;
+    text-align: center;
+  }
 `
 const LeftContent = styled.div`
-  width: 445px;
+  width: 267px;
+  height: 232px;
+  @media(max-width: 768px) {
+    width: 209px;
+    height: 179px;
+    margin: auto;
+    margin: 88px auto;
+  }
 `
 const RightContent = styled.div`
   width: 635px;
   word-break: break-word;
+  @media(max-width: 1024px){
+    width: 560px;
+  }
+  @media(max-width: 768px){
+    width: 100%;
+  }
 `
 const Image = styled.img`
-  width: 267px;
-  height: 232px;
+  width: inherit;
+  height: inherit;
 `
 const Title = styled.h1`
   font-family: IBM Plex Sans;
@@ -29,6 +52,9 @@ const Title = styled.h1`
   font-size: 20px;
   line-height: 26px;
   letter-spacing: -0.2px;
+  @media(max-width: 768px) {
+    display:none;
+  }
 `
 const Text = styled.p`
   color: #BABABA;
@@ -38,17 +64,30 @@ const Text = styled.p`
   font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.2px;
+  @media(max-width: 425px) {
+    float: left;
+  }
 `
 const List = styled.ul`
   padding: 0;
   display: flex;
   justify-content: space-between;
   list-style: none;
+  @media(max-width: 425px) {
+    display: list-item;
+    margin: auto;
+  }
 `
 const ListItem = styled.li`
   color: orange;
   font-family: IBM Plex Sans;
   letter-spacing: -0.2px;
+  @media(max-width: 425px) {
+    width: 164px;
+    margin: auto;
+    float: left;
+    padding: 8px 0;
+  }
 `
 const Anchor = styled.a`
   color: #FF8364;
