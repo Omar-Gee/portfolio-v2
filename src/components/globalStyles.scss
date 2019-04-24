@@ -1,23 +1,21 @@
+
+
 $background-color: #141414;
-
-$header-link-color: #FFFFFF;
-$header-link-hover: #FF8364;
-
-$footer-link-color: #FF8364;
-$footer-link-hover: #FFFFFF;
-
+$portfolio-white: #FFFFFF;
+$portfolio-orange: #FF8364;
 $title-color: #FFFFFF;
 $main-text-color: #BABABA;
 
 * {
-  margin:0 ;
-  padding:0;
-  background: $background-color;
+
+
 }
 html {
+  margin:0 ;
+  padding:0;
   scroll-behavior: smooth;
 }
 body {
-  width: 90%;
-  margin: auto;
+
+
 }

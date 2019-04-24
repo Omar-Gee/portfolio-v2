@@ -5,8 +5,3 @@ import Footer from "./footer"
 
 storiesOf('Footer', module)
   .add('example', () => <Footer />)
-
-
-
-
-

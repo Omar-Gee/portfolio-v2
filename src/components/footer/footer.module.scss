@@ -42,7 +42,7 @@
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 5px;
-  color: $footer-link-color;
+  color: $portfolio-orange;
 }
 .listItem::before {
   content: "";
@@ -51,7 +51,7 @@
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: $footer-link-color;;
+  background-color: $portfolio-orange;;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -62,10 +62,10 @@
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  color: $header-link-hover;
+  color: $portfolio-orange;
 }
 .listItem:hover {
-  color: $header-link-color;
+  color: $portfolio-white;
   cursor: pointer;
 }
 

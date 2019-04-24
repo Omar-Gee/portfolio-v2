@@ -30,7 +30,8 @@
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 5px;
-  color: $header-link-color;
+  color: $portfolio-white;
+  border: none;
 }
 .listItem::before {
   content: "";
@@ -50,10 +51,11 @@
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  color: $header-link-hover;
+  color: $portfolio-orange;
 }
 .listItem:hover {
-  color: $footer-link-color;
+  color: $portfolio-orange;
+  cursor: pointer;
 }
 
 @media(max-width: 425px) {
