@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import pic from "../../images/analysis-coffee-cup-1549702.jpg"
+import pic from "../../images/dev1.jpg"
 const Container =  styled.div`
   background: #000;
   display: flex;
