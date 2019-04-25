@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import bdclogo from "../../images/bdc-text.png"
+import Img from "gatsby-image"
 // import { container, title, list, listItem, text, leftContent, rightContent, image } from "./experience.module.scss"
 const Container = styled.div`
   padding: 110px 0;
@@ -38,25 +38,39 @@ const LeftContent = styled.div`
 
 `
 const RightContent = styled.div`
-  max-width: 445px;
+  width: 540px;
+
   @media(max-width: 1024px) {
-    zoom: 0.6;
+    width: 296px;
+
   }
   @media(max-width: 768px) {
     position: relative;
-    top: -263px;
+    top: -156px;
     margin: auto;
   }
   @media(max-width: 425px) {
     position: relative;
-    top: -663px;
-    left: -32px;
     margin: auto;
+    top: -353px;
   }
 
+  @media(max-width: 320px) {
+    position: relative;
+    margin: auto;
+    top: -408px;
+    left: -8px;
+  }
 
 `
-const Image = styled.img`
+const Image = styled(Img)`
+position: relative;
+width: inherit;
+height: inherit;
+  @media(max-width: 425px) {
+    overflow: unset;
+  }
+
 `
 const Title = styled.h1`
   font-family: IBM Plex Sans;
@@ -111,7 +125,7 @@ const ListItem = styled.li`
   }
 `
 
-const experienceOne = () => {
+const experienceOne = ({ childImageSharp }) => {
   return (
     <section id="experience">
       <Container>
@@ -135,8 +149,9 @@ const experienceOne = () => {
             backend development.
           </Text>
         </LeftContent>
-        <RightContent>
-          <Image src={bdclogo} alt="BDC" />
+        <RightContent image={childImageSharp.fluid} >
+          <Image fluid={childImageSharp.fluid}  />
+          {/* <Image fluid={childImageSharp.fluid} objectFit="cover" alt="BDC" /> */}
         </RightContent>
       </Container>
     </section>

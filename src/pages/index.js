@@ -7,7 +7,9 @@ import ExperienceTextLeft from  "../components/experienceTextLeft/experienceText
 import ExperienceTextRight from  "../components/experienceTextRight/experienceTextRight"
 import Skills from  "../components/skills/skills"
 import Contact from "../components/contact/contact"
+import SEO from "../components/seo"
 import { ThemeProvider } from "styled-components"
+import { graphql } from "gatsby"
 // import { ThemeProvider } from "../components/utils/themeContext"
 require('typeface-ibm-plex-sans')
 
@@ -34,7 +36,8 @@ const PageContainer = styled.div`
   }
 `
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  //console.log(data.bdclogo);
   const theme = {
     main: "dark-mode",
   }
@@ -44,9 +47,9 @@ const IndexPage = () => {
       <ThemeProvider theme={theme}>
         <>
           <Header />
-          <Intro />
-          <ExperienceTextLeft  />
-          <ExperienceTextRight />
+          <Intro {...data.intro} />
+          <ExperienceTextLeft {...data.bdclogo}  />
+          <ExperienceTextRight {...data.pblogo} />
           <Skills />
           <Contact />
           <Footer />
@@ -58,3 +61,29 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const IndexQuery = graphql`
+query {
+  intro: file(relativePath: {eq: "dev1.jpg"}) {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid_noBase64
+      }
+    }
+  }
+  pblogo: file(relativePath: {eq: "palmera-bytes-logo-white.png"}) {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid_noBase64
+      }
+    }
+  }
+  bdclogo: file(relativePath: {eq: "bdc-text.png"}) {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid_noBase64
+      }
+    }
+  }
+}
+`

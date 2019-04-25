@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import pblogo from "../../images/palmera-bytes-logo-white.png"
+import Img from "gatsby-image"
 // import { container, title, list, listItem, text, leftContent, rightContent, pbwLink, image } from "./experience.module.scss"
 
 const Container = styled.div`
@@ -23,12 +23,12 @@ const Container = styled.div`
 `
 const LeftContent = styled.div`
   width: 267px;
-  height: 232px;
+
   @media(max-width: 768px) {
     width: 209px;
-    height: 179px;
     margin: auto;
-    margin: 88px auto;
+    margin-top: 100px;
+    margin-bottom: 56px;
   }
   @media(max-width: 425px) {
 
@@ -54,9 +54,10 @@ const RightContent = styled.div`
   }
 
 `
-const Image = styled.img`
+const Image = styled(Img)`
   width: inherit;
   height: inherit;
+
 `
 const Title = styled.h1`
   font-family: IBM Plex Sans;
@@ -113,12 +114,13 @@ const Anchor = styled.a`
   text-decoration: none;
 `
 
-const experienceTwo = () => {
+const experienceTwo = ({ childImageSharp }) => {
   return (
     <section>
       <Container>
         <LeftContent>
-          <Image src={pblogo} alt="Palmera bytes logo" />
+          <Image fluid={childImageSharp.fluid} />
+          {/* <Image src={image.fluid} alt="Palmera bytes logo" /> */}
         </LeftContent>
         <RightContent>
           <Title>Palmera Bytes Website</Title>

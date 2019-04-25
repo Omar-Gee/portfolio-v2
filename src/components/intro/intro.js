@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
-import pic from "../../images/dev1.jpg"
+import Img from "gatsby-image"
+
 const Container =  styled.div`
   background: #000;
   display: flex;
@@ -20,7 +21,6 @@ const Container =  styled.div`
     text-align: center;
     padding: 0;
     width: 100%;
-    margin-bottom: 104px;
   }
 
 `
@@ -41,7 +41,7 @@ const RightContent = styled.div`
     display: none;
   }
 `
-const Image = styled.img`
+const Image = styled(Img)`
   height: inherit;
   width: inherit;
   border-radius: 8px;
@@ -74,7 +74,7 @@ const Text = styled.p`
   color: #BABABA;
 `
 
-const intro = () => {
+const intro = ({ childImageSharp }) => {
   return (
     <section >
       <Container>
@@ -88,7 +88,8 @@ const intro = () => {
           </Text>
         </LeftContent>
         <RightContent >
-          <Image  src={pic} alt="" />
+          <Image fluid={childImageSharp.fluid} />
+          {/* <Image  src={pic} alt="" /> */}
         </RightContent>
       </Container>
 
