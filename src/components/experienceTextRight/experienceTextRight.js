@@ -1,63 +1,41 @@
 import React from 'react';
 import styled from "styled-components"
 import Img from "gatsby-image"
-// import { container, title, list, listItem, text, leftContent, rightContent, pbwLink, image } from "./experience.module.scss"
 
 const Container = styled.div`
+  width:100%;
   padding: 110px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
   background: #000;
-  @media(min-width: 1500px){
-    justify-content: space-evenly;
-  }
-  @media(max-width: 1023px){
-    justify-content: space-between;
-  }
   @media(max-width: 768px) {
     display: unset;
     text-align: center;
   }
 `
-const LeftContent = styled.div`
-  width: 267px;
-
-  @media(max-width: 768px) {
-    width: 209px;
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 56px;
-  }
-  @media(max-width: 425px) {
-
-    margin: 80px auto;
-    margin-top: 140px;
-  }
-  @media(max-width: 320px) {
-
-    margin: 40px auto;
-    margin-top: 140px;
-  }
-
-
-`
 const RightContent = styled.div`
   width: 635px;
   word-break: break-word;
-  @media(max-width: 1024px){
-    width: 560px;
-  }
   @media(max-width: 768px){
     width: 100%;
   }
-
 `
 const Image = styled(Img)`
-  width: inherit;
-  height: inherit;
-
+  width: 540px;
+  margin-right: 128px;
+  zoom: 0.6;
+  @media(max-width: 768px) {
+    margin: auto;
+    margin-top: 102px;
+    margin-bottom: 51px;
+  }
+  @media(max-width: 327px) {
+    display: flex;
+    zoom: 0.5;
+    margin: auto;
+  }
 `
 const Title = styled.h1`
   font-family: IBM Plex Sans;
@@ -83,31 +61,17 @@ const Text = styled.p`
   }
 `
 const List = styled.ul`
+  display: block;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  @media(max-width: 425px) {
-    display: list-item;
-    margin: auto;
-  }
 `
 const ListItem = styled.li`
+  display: inline-block
+  margin: 2px 8px 2px 0;
+  padding: 2px 4px 2px 0;
+  width:fit-content;
   color: orange;
   font-family: IBM Plex Sans;
   letter-spacing: -0.2px;
-  @media(max-width: 425px) {
-    width: 188px;
-    margin: auto;
-    float: left;
-    padding: 8px 0;
-  }
-  @media(max-width: 375px) {
-    width: 163px;
-  }
-  @media(max-width: 320px) {
-    width: 136px;
-}
 `
 const Anchor = styled.a`
   color: #FF8364;
@@ -118,10 +82,8 @@ const experienceTwo = ({ childImageSharp }) => {
   return (
     <section>
       <Container>
-        <LeftContent>
           <Image fluid={childImageSharp.fluid} />
           {/* <Image src={image.fluid} alt="Palmera bytes logo" /> */}
-        </LeftContent>
         <RightContent>
           <Title>Palmera Bytes Website</Title>
           <List>

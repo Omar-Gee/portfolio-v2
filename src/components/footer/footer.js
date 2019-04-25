@@ -16,9 +16,6 @@ padding-top: 50px;
   letter-spacing: -0.1px;
   height: 118px;
   color: #fff;
-  @media(min-width: 1500px){
-    justify-content: space-evenly;
-  }
   @media(max-width: 425px){
     position: static;
     display: unset;

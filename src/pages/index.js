@@ -14,9 +14,11 @@ import { graphql } from "gatsby"
 require('typeface-ibm-plex-sans')
 
 const PageContainer = styled.div`
-  padding:20px 128px;
+  padding: 20px 128px;
   background: #000;
-  @media(1500px) {
+  @media(min-width:1500px) {
+    margin: auto;
+    width: 60%;
     padding:20px 128px;
   }
   @media(max-width: 1024px) {
@@ -43,7 +45,7 @@ const IndexPage = ({ data }) => {
   }
   return (
     <PageContainer>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <ThemeProvider theme={theme}>
         <>
           <Header />

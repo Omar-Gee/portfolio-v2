@@ -3,18 +3,13 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 // import { container, title, list, listItem, text, leftContent, rightContent, image } from "./experience.module.scss"
 const Container = styled.div`
+  width:100%;
   padding: 110px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
   background: #000;
-  @media(min-width: 1500px){
-    justify-content: space-evenly;
-  }
-  @media(max-width: 1023px){
-    justify-content: space-between;
-  }
   @media(max-width: 768px) {
     display: unset;
     position: static;
@@ -24,53 +19,25 @@ const Container = styled.div`
 const LeftContent = styled.div`
   width: 635px;
   word-break: break-word;
-  @media(min-width: 1024px){
-    width: 560px;
-  }
   @media(max-width: 768px) {
-    position: relative;
-    top: 95px;
     width:100%
   }
-  @media(max-width: 768px) {
-    top: 140px;
-  }
-
 `
-const RightContent = styled.div`
-  width: 540px;
 
-  @media(max-width: 1024px) {
-    width: 296px;
-
-  }
-  @media(max-width: 768px) {
-    position: relative;
-    top: -156px;
-    margin: auto;
-  }
-  @media(max-width: 425px) {
-    position: relative;
-    margin: auto;
-    top: -353px;
-  }
-
-  @media(max-width: 320px) {
-    position: relative;
-    margin: auto;
-    top: -408px;
-    left: -8px;
-  }
-
-`
 const Image = styled(Img)`
-position: relative;
-width: inherit;
-height: inherit;
-  @media(max-width: 425px) {
-    overflow: unset;
+  margin-left: 64px;
+  width: 540px;
+  @media(max-width: 768px) {
+    display: none;
   }
-
+`
+const ImageSmallerScreen = styled(Img)`
+  display:none;
+  @media(max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    margin: 40px 16px;
+  }
 `
 const Title = styled.h1`
   font-family: IBM Plex Sans;
@@ -96,39 +63,24 @@ const Text = styled.p`
   }
 `
 const List = styled.ul`
-
+  display: block;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  @media(max-width: 425px) {
-    display: list-item;
-    margin: auto;
-  }
 `
 const ListItem = styled.li`
+  display: inline-block
+  margin: 2px 8px 2px 0;
+  padding: 2px 4px 2px 0;
+  width:fit-content;
   color: orange;
   font-family: IBM Plex Sans;
   letter-spacing: -0.2px;
-
-  @media(max-width: 425px) {
-    width: 188px;
-    margin: auto;
-    float: left;
-    padding: 8px 0;
-  }
-  @media(max-width: 375px) {
-    width: 163px;
-  }
-  @media(max-width: 320px) {
-        width: 136px;
-  }
 `
 
 const experienceOne = ({ childImageSharp }) => {
   return (
     <section id="experience">
       <Container>
+        <ImageSmallerScreen fluid={childImageSharp.fluid}/>
         <LeftContent>
           <Title>Brazil Dental Care</Title>
           <List>
@@ -149,10 +101,7 @@ const experienceOne = ({ childImageSharp }) => {
             backend development.
           </Text>
         </LeftContent>
-        <RightContent image={childImageSharp.fluid} >
-          <Image fluid={childImageSharp.fluid}  />
-          {/* <Image fluid={childImageSharp.fluid} objectFit="cover" alt="BDC" /> */}
-        </RightContent>
+        <Image fluid={childImageSharp.fluid}  />
       </Container>
     </section>
   );

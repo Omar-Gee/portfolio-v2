@@ -9,9 +9,6 @@ const Container =  styled.div`
   align-items: center;
   padding: 90px 0 160px 0;
   color: white;
-  @media(min-width: 1500px){
-    justify-content: space-evenly;
-  }
   @media(max-width: 1024px) {
     justify-content: space-between;
     padding: 0;
@@ -22,29 +19,18 @@ const Container =  styled.div`
     padding: 0;
     width: 100%;
   }
-
 `
 const LeftContent = styled.div`
   width: 540px;
   margin-right: 15px;
 `
-const RightContent = styled.div`
+const Image = styled(Img)`
+  margin-left: 64px;
   width: 540px;
-  height: 347px;
-  margin-left: 15px;
-  background: #212121;
   border-radius: 8px;
-  @media(max-width: 1024px) {
-    zoom: 0.6;
-  }
-  @media(max-width: 768px) {
+  @media(max-width: 900px){
     display: none;
   }
-`
-const Image = styled(Img)`
-  height: inherit;
-  width: inherit;
-  border-radius: 8px;
 `
 const Title = styled.h1`
   font-family: IBM Plex Sans;
@@ -87,10 +73,9 @@ const intro = ({ childImageSharp }) => {
             some of the most exciting tools and frameworks for web development. Below are a few examples.
           </Text>
         </LeftContent>
-        <RightContent >
+
           <Image fluid={childImageSharp.fluid} />
-          {/* <Image  src={pic} alt="" /> */}
-        </RightContent>
+
       </Container>
 
 
