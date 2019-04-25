@@ -42,14 +42,6 @@ const List = styled.ul`
     padding: 0;
     position: relative;
     top: -59px;
-
-  }
-
-  @media(max-width: 375px){
-
-  }
-  @media(max-width: 320px){
-
   }
 `
 const ListItem = styled.li`
