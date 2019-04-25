@@ -40,6 +40,7 @@ const IndexPage = () => {
   }
   return (
     <PageContainer>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <ThemeProvider theme={theme}>
         <>
           <Header />
