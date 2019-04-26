@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 
-require('typeface-ibm-plex-sans')
+// require('typeface-ibm-plex-sans')
 
 const IndexPage = ({ data }) => {
   const [mode, setMode] = React.useState('dark')

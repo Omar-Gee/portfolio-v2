@@ -55,18 +55,6 @@ const ListItemLeft = styled.li`
   }
 `
 
-const ListItemRight = styled.li`
-  margin-left: 30px;
-  font-weight: bold;
-  line-height: normal;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  font-size: 14px;
-  @media(max-width: 425px) {
-    margin: 0;
-    padding: 0;
-  }
-`
 const Anchor = styled.a`
   text-decoration: none;
   color: ${props => props.theme.actionColor};
@@ -83,17 +71,24 @@ const Anchor = styled.a`
 const ThemeButton = styled.div`
   background: ${props => props.theme.themeButtonBackground};
   color: ${props => props.theme.themeButtonColor};
+  width: fit-content;
   padding: 8px;
   margin: 4px;
   border-radius: 8px;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-size: 14px;
   &:hover {
     background: ${props => props.theme.themeButtonHoverBackground};
     color: ${props => props.theme.themeButtonHoverColor};
     cursor: pointer;
   }
-  @media(max-width: 425px) {
-    margin: 0;
-    padding: 0;
+  @media(max-width: 520px) {
+    text-align: center;
+    width: 120px;
+    margin: auto;
   }
 `
 
@@ -113,9 +108,7 @@ const Header = ({ mode, setMode }) =>{
           <ListItemLeft><Anchor href="#skills">Skills</Anchor></ListItemLeft>
           <ListItemLeft><Anchor href="#contact">Contact</Anchor></ListItemLeft>
         </List>
-        <List>
-          <ListItemRight><ThemeButton id={mode} onClick={handleThemeChange}>{mode === 'dark' ? 'light':'dark'} mode</ThemeButton></ListItemRight>
-        </List>
+        <ThemeButton id={mode} onClick={handleThemeChange}>{mode === 'dark' ? 'light':'dark'} mode</ThemeButton>
       </Container>
     </header>
   )
