@@ -57,7 +57,7 @@ const Text = styled.p`
   font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.2px;
-  color: #BABABA;
+  color: ${props => props.theme.textColor};
 `
 
 const intro = ({ childImageSharp }) => {

@@ -3,6 +3,9 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 const Container = styled.div`
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
   width:100%;
   padding: 110px 0;
   display: flex;
@@ -23,6 +26,8 @@ const RightContent = styled.div`
   }
 `
 const Image = styled(Img)`
+  background: ${props => props.theme.imageBackground};
+  border-radius: 12px;
   width: 540px;
   margin-right: 128px;
   zoom: 0.6;
@@ -38,7 +43,6 @@ const Image = styled(Img)`
   }
 `
 const Title = styled.h1`
-  font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -49,10 +53,7 @@ const Title = styled.h1`
   }
 `
 const Text = styled.p`
-  color: #BABABA;
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: normal;
+  color: ${props => props.theme.textColor};
   font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.2px;
@@ -69,13 +70,15 @@ const ListItem = styled.li`
   margin: 2px 8px 2px 0;
   padding: 2px 4px 2px 0;
   width:fit-content;
-  color: orange;
-  font-family: IBM Plex Sans;
+  color: ${({ theme }) => theme.experienceSkills};
   letter-spacing: -0.2px;
 `
 const Anchor = styled.a`
-  color: #FF8364;
+  color: ${({ theme }) => theme.actionOrange};
   text-decoration: none;
+  &:hover {
+    color: ${({ theme }) => theme.iconColor};
+  }
 `
 
 const experienceTwo = ({ childImageSharp }) => {

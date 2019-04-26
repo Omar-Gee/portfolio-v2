@@ -3,17 +3,18 @@ import styled from "styled-components"
 // import footerStyles from "./footer.module.scss"
 
 const Container = styled.div`
-  padding-top: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: ${props => props.theme.background};
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.1px;
+
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: ${props => props.theme.background};
   height: 118px;
   color: ${props => props.theme.color};
   @media(max-width: 425px){
@@ -25,7 +26,7 @@ const Container = styled.div`
 const Text = styled.p`
   line-height: 24px;
   letter-spacing: -0.1px;
-  color: #BABABA;
+  color: ${props => props.theme.textColor};
   @media(max-width: 425px){
     position: relative;
     top: 49px;
@@ -56,7 +57,7 @@ const ListItem = styled.li`
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #fff;;
+    background-color: ${props => props.theme.iconColor};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -67,7 +68,7 @@ const ListItem = styled.li`
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    color: #FF8364;
+    color: ${props => props.theme.actionOrange};
   }
   @media(max-width: 425px){
     margin-left:0;
@@ -82,10 +83,10 @@ const ListItem = styled.li`
 `
 const Anchor = styled.a`
   text-decoration: none;
-  color: #FF8364;
+  color: ${props => props.theme.actionOrange};
   &:hover {
     cursor: pointer;
-    color: ${props => props.theme.color};
+    color: ${props => props.theme.iconColor};
   }
 `
 

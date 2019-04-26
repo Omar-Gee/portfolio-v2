@@ -24,12 +24,27 @@ const PageContainer = styled.div`
 const theme = {
   light: {
     background:'#fff',
-    color: '#000'
-
+    actionOrange: '#FF8364',
+    buttonHover: '#fff',
+    color: '#000',
+    textColor: '#616161',
+    experienceSkills: 'orange',
+    anchor: '#FF8364',
+    imageBackground: '#000',
+    inputBackground: '#f3f3f3',
+    iconColor: 'cornflowerblue'
   },
   dark: {
     background:'#000',
-    color: '#fff'
+    actionOrange: '#FF8364',
+    buttonHover: '#000',
+    color: '#fff',
+    textColor: '#BABABA',
+    experienceSkills: 'orange',
+    anchor: '#FF8364',
+    imageBackground: '#000',
+    inputBackground: '#212121',
+    iconColor: '#fff'
   }
 }
 

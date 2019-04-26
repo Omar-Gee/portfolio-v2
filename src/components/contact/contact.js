@@ -4,15 +4,15 @@ import {FaTwitter, FaGithub} from "react-icons/fa"
 import { useState } from "react";
 
 const Container = styled.div`
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
   padding: 40px 0;
   display: flex;
   justify-content: center;
   color: ${props => props.theme.color};
   background-color: ${props => props.theme.background};
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 24px;
   letter-spacing: -0.1px;
   @media(max-width: 768px){
     justify-content: space-around;
@@ -46,7 +46,7 @@ const Title = styled.h1`
   letter-spacing: -0.8px;
 `
 const Text = styled.p`
-  color: #BABABA;
+  color: ${props => props.theme.textColor};
   width: 350px;
   height: 58px;
   @media(max-width: 425px){
@@ -57,7 +57,7 @@ const Form = styled.form`
   display: inline-grid;
 `
 const Input = styled.input`
-background: #212121;
+background: ${props => props.theme.inputBackground};
 border-radius: 8px;
 width: 350px;
 height: 58px;
@@ -78,7 +78,7 @@ transition: all 0.3s ease;
 `
 const TextArea = styled.textarea`
 padding: 16px 0 0 32px;
-background: #212121;
+background: ${props => props.theme.inputBackground};
 border-radius: 8px;
 border: none;
 color: white;
@@ -100,7 +100,7 @@ transition: all 0.3s ease;
 const Button = styled.button`
   margin: 10px 0;
   border: none;
-  background: #FF8364;
+  background: ${props => props.theme.actionOrange};
   border-radius: 8px;
   width: 200px;
   height: 58px;
@@ -111,8 +111,8 @@ const Button = styled.button`
   color: #FFFFFF;
   transition: all 0.3s ease;
     &:hover {
-      background: #FFFFFF;
-      color: #6D6D6D;
+      background: ${props => props.theme.iconColor};
+      color: ${props => props.theme.buttonHover};
       box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
     }
   @media(max-width: 425px){
@@ -127,16 +127,18 @@ const ListItem = styled.li`
   margin: 19px 0;
 `
 const ListTitle = styled.h1`
-  font-family: IBM Plex Sans;
-  font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.2px;
   text-transform: uppercase;
+  margin: 10px auto;
+  margin-bottom:2px;
 `
 const ListText = styled.p`
+  margin:0;
   font-size: 16px;
+  color: ${props => props.theme.textColor}
 `
 const InnerList = styled.ul`
   padding: 0;
@@ -154,24 +156,21 @@ const InnerListItem = styled.li`
   font-size: 32px;
 `
 const Link = styled.a`
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: -0.1px;
-text-decoration: none;
-color: #FF8364;
-&:hover {
-  color: white;
-}
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  text-decoration: none;
+
+  color: ${props => props.theme.actionOrange};
+  &:hover {
+    color: ${props => props.theme.iconColor};
+  }
 `
 const IconLink = styled.a`
-color: #6D6D6D;
-transition: all 0.3s ease;
-&:hover {
-  color: #FF8364;
-}
+  color: ${props => props.theme.actionOrange};
+  transition: all 0.3s ease;
+  &:hover {
+    color: ${props => props.theme.iconColor};
+  }
 `
 
 const contact = () => {
@@ -220,7 +219,7 @@ const contact = () => {
           <List>
             <ListItem>
               <ListTitle>Email</ListTitle>
-              <Link href="mailto:omageerman@gmail.com"><ListText>omargeerman@gmail.com</ListText></Link>
+              <Link href="mailto:omageerman@gmail.com">omargeerman@gmail.com</Link>
             </ListItem>
             <ListItem>
               <ListTitle>Phone</ListTitle>

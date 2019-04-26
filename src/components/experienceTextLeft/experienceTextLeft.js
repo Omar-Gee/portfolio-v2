@@ -52,7 +52,7 @@ const Title = styled.h1`
   }
 `
 const Text = styled.p`
-  color: #BABABA;
+  color: ${props => props.theme.textColor};
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: normal;
@@ -72,7 +72,7 @@ const ListItem = styled.li`
   margin: 2px 8px 2px 0;
   padding: 2px 4px 2px 0;
   width:fit-content;
-  color: orange;
+  color: ${props => props.theme.experienceSkills};
   font-family: IBM Plex Sans;
   letter-spacing: -0.2px;
 `

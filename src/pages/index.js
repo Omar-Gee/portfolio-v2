@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import Header from "../components/header/header"
 import Footer from "../components/footer/footer"
 import Intro from "../components/intro/intro"
@@ -9,11 +8,9 @@ import Skills from  "../components/skills/skills"
 import Contact from "../components/contact/contact"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
-
 import { graphql } from "gatsby"
+
 require('typeface-ibm-plex-sans')
-
-
 
 const IndexPage = ({ data }) => {
   const [mode, setMode] = React.useState('dark')

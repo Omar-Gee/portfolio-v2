@@ -2,18 +2,18 @@ import React from "react"
 import styled from "styled-components"
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: ${props => props.theme.background};
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.1px;
-  height: 118px;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: ${props => props.theme.background};
+  height: 118px;
   @media(max-width: 425px) {
     display: unset;
   }
@@ -30,8 +30,6 @@ const List = styled.ul`
 const ListItemLeft = styled.li`
   position: relative;
   margin-right: 30px;
-  font-family: IBM Plex Sans;
-  font-style: normal;
   font-weight: bold;
   &::before {
     content: "";
@@ -40,7 +38,7 @@ const ListItemLeft = styled.li`
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #FF8364;
+    background-color: ${props => props.theme.iconColor};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -51,7 +49,6 @@ const ListItemLeft = styled.li`
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    color: #FF8364;
   }
   @media(max-width: 425px) {
     margin: 0;
@@ -61,8 +58,6 @@ const ListItemLeft = styled.li`
 const ListItemRight = styled.li`
   position: relative;
   margin-left: 30px;
-  font-family: IBM Plex Sans;
-  font-style: normal;
   font-weight: bold;
   &::before {
     content: "";
@@ -71,7 +66,7 @@ const ListItemRight = styled.li`
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #FF8364;
+    background-color: ${props => props.theme.iconColor};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -82,7 +77,7 @@ const ListItemRight = styled.li`
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    color: #FF8364;
+    color: ${props => props.theme.iconColor};
   }
   @media(max-width: 425px) {
     margin: 0;
@@ -90,13 +85,13 @@ const ListItemRight = styled.li`
 `
 const Anchor = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.actionOrange};
   line-height: normal;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   font-size: 14px;
   &:hover {
-    color: #FF8364;
+    color: ${props => props.theme.iconColor};
     cursor: pointer;
   }
 `
@@ -106,13 +101,13 @@ const Button = styled.button`
   border: none;
   font-weight: bold;
   text-decoration: none;
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.actionOrange};
   line-height: normal;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   font-size: 14px;
   &:hover {
-    color: #FF8364;
+    color: ${props => props.theme.iconColor};
     cursor: pointer;
   }
   @media(max-width: 425px) {

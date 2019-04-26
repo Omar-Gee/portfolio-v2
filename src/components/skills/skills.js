@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from "styled-components"
-// import { container, title, list, listItem, skillGroup, middleGroup, groupContainer } from "./skills.module.scss"
 
 const Container = styled.div`
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
   background: ${props => props.theme.background};
   padding: 64px 0;
   color: ${props => props.theme.color};
@@ -20,13 +22,12 @@ const GroupContainer = styled.div`
   }
 `
 const Title = styled.h1`
-margin: 8px 0 32px 0;
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 26px;
-letter-spacing: -0.2px;
+  margin: 8px 0 32px 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
 `
 const SkillGroup = styled.div`
   text-align: center;
@@ -35,28 +36,18 @@ const SkillGroup = styled.div`
     padding: 24px 0;
   }
 `
-// const MiddleGroup = styled.div`
-// text-align: center;
-// padding: 64px 128px;
-// border-left: 1px solid #444444;
-// border-right: 1px solid #444444;
-// `
 const List = styled.ul`
-padding: 0;
-list-style: none;
+  padding: 0;
+  list-style: none;
+  color: ${props => props.theme.textColor};
 `
 const ListItem = styled.li`
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.2px;
   @media(max-width: 425px) {
     padding: 8px 0;
   }
-
-
 `
 
 const skills = () => {
