@@ -90,6 +90,14 @@ const ThemeButton = styled.div`
     width: 120px;
     margin: auto;
   }
+  @media(max-width: 425px) {
+    text-align: center;
+    width: 120px;
+    margin: auto;
+    margin-top: 56px;
+    margin-bottom: 8px;
+  }
+
 `
 
 const Header = ({ mode, setMode }) =>{
