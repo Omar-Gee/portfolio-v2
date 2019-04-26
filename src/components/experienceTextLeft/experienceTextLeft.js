@@ -66,9 +66,10 @@ const Text = styled.p`
 const List = styled.ul`
   display: block;
   padding: 0;
+  list-style: none;
 `
 const ListItem = styled.li`
-  display: inline-block
+  display: inline-block;
   margin: 2px 8px 2px 0;
   padding: 2px 4px 2px 0;
   width:fit-content;
