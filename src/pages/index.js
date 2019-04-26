@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
       <>
         <Layout mode={mode}>
           <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-          <Header setMode={setMode} />
+          <Header mode={mode} setMode={setMode} />
           <Intro {...data.intro} />
           <ExperienceTextLeft {...data.bdclogo}  />
           <ExperienceTextRight {...data.pblogo} />

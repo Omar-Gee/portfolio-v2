@@ -38,7 +38,7 @@ const ListItemLeft = styled.li`
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: ${props => props.theme.iconColor};
+    background-color: ${props => props.theme.actionHover};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -56,58 +56,39 @@ const ListItemLeft = styled.li`
 `
 
 const ListItemRight = styled.li`
-  position: relative;
   margin-left: 30px;
   font-weight: bold;
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: ${props => props.theme.iconColor};
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-  }
-  &:hover::before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    color: ${props => props.theme.iconColor};
-  }
+  line-height: normal;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-size: 14px;
   @media(max-width: 425px) {
     margin: 0;
+    padding: 0;
   }
 `
 const Anchor = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.actionOrange};
+  color: ${props => props.theme.actionColor};
   line-height: normal;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   font-size: 14px;
   &:hover {
-    color: ${props => props.theme.iconColor};
+    color: ${props => props.theme.actionHover};
     cursor: pointer;
   }
 `
 
-const Button = styled.button`
-  background: ${props => props.theme.background};
-  border: none;
-  font-weight: bold;
-  text-decoration: none;
-  color: ${props => props.theme.actionOrange};
-  line-height: normal;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  font-size: 14px;
+const ThemeButton = styled.div`
+  background: ${props => props.theme.themeButtonBackground};
+  color: ${props => props.theme.themeButtonColor};
+  padding: 8px;
+  margin: 4px;
+  border-radius: 8px;
   &:hover {
-    color: ${props => props.theme.iconColor};
+    background: ${props => props.theme.themeButtonHoverBackground};
+    color: ${props => props.theme.themeButtonHoverColor};
     cursor: pointer;
   }
   @media(max-width: 425px) {
@@ -116,10 +97,13 @@ const Button = styled.button`
   }
 `
 
-
-const Header = ({ setMode }) =>{
+const Header = ({ mode, setMode }) =>{
   const handleThemeChange = (e) => {
-    setMode(e.target.name)
+    if (e.target.id === 'dark'){
+      setMode('light')
+    } else {
+      setMode('dark')
+    }
   }
   return (
     <header>
@@ -130,8 +114,7 @@ const Header = ({ setMode }) =>{
           <ListItemLeft><Anchor href="#contact">Contact</Anchor></ListItemLeft>
         </List>
         <List>
-          <ListItemRight><Button name="dark" onClick={handleThemeChange}>Dark mode</Button></ListItemRight>
-          <ListItemRight><Button name="light" onClick={handleThemeChange}>Light mode</Button></ListItemRight>
+          <ListItemRight><ThemeButton id={mode} onClick={handleThemeChange}>{mode === 'dark' ? 'light':'dark'} mode</ThemeButton></ListItemRight>
         </List>
       </Container>
     </header>

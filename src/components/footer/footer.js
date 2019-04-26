@@ -57,7 +57,7 @@ const ListItem = styled.li`
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: ${props => props.theme.iconColor};
+    background-color: ${props => props.theme.actionHover};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -68,7 +68,7 @@ const ListItem = styled.li`
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    color: ${props => props.theme.actionOrange};
+    color: ${props => props.theme.actionColor};
   }
   @media(max-width: 425px){
     margin-left:0;
@@ -83,10 +83,10 @@ const ListItem = styled.li`
 `
 const Anchor = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.actionOrange};
+  color: ${props => props.theme.actionColor};
   &:hover {
     cursor: pointer;
-    color: ${props => props.theme.iconColor};
+    color: ${props => props.theme.actionHover};
   }
 `
 

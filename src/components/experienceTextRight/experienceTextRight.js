@@ -74,10 +74,10 @@ const ListItem = styled.li`
   letter-spacing: -0.2px;
 `
 const Anchor = styled.a`
-  color: ${({ theme }) => theme.actionOrange};
+  color: ${({ theme }) => theme.actionColor};
   text-decoration: none;
   &:hover {
-    color: ${({ theme }) => theme.iconColor};
+    color: ${({ theme }) => theme.actionHover};
   }
 `
 

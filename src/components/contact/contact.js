@@ -62,7 +62,7 @@ border-radius: 8px;
 width: 350px;
 height: 58px;
 border: none;
-color: white;
+color: ${props => props.theme.textColor};
 padding-left: 32px;
 margin: 5px 0;
 transition: all 0.3s ease;
@@ -81,7 +81,7 @@ padding: 16px 0 0 32px;
 background: ${props => props.theme.inputBackground};
 border-radius: 8px;
 border: none;
-color: white;
+color: ${props => props.theme.textColor};
 margin: 5px 0 10px 0;
 width: 350px;
 height: 150px;
@@ -100,7 +100,7 @@ transition: all 0.3s ease;
 const Button = styled.button`
   margin: 10px 0;
   border: none;
-  background: ${props => props.theme.actionOrange};
+  background: ${props => props.theme.actionColor};
   border-radius: 8px;
   width: 200px;
   height: 58px;
@@ -111,7 +111,7 @@ const Button = styled.button`
   color: #FFFFFF;
   transition: all 0.3s ease;
     &:hover {
-      background: ${props => props.theme.iconColor};
+      background: ${props => props.theme.actionHover};
       color: ${props => props.theme.buttonHover};
       box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
     }
@@ -160,16 +160,16 @@ const Link = styled.a`
   letter-spacing: -0.1px;
   text-decoration: none;
 
-  color: ${props => props.theme.actionOrange};
+  color: ${props => props.theme.actionColor};
   &:hover {
-    color: ${props => props.theme.iconColor};
+    color: ${props => props.theme.actionHover};
   }
 `
 const IconLink = styled.a`
-  color: ${props => props.theme.actionOrange};
+  color: ${props => props.theme.actionColor};
   transition: all 0.3s ease;
   &:hover {
-    color: ${props => props.theme.iconColor};
+    color: ${props => props.theme.actionHover};
   }
 `
 

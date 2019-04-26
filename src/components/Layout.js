@@ -3,9 +3,13 @@ import styled from "styled-components"
 
 import { ThemeProvider } from "styled-components"
 
-const PageContainer = styled.div`
-  padding: 20px 128px;
+const PageContainer =styled.div`
   background: ${props => props.theme.background};
+`
+
+const PageInnerContainer = styled.div`
+  padding: 20px 128px;
+
   @media(min-width:1500px) {
     margin: auto;
     width: 60%;
@@ -24,7 +28,14 @@ const PageContainer = styled.div`
 const theme = {
   light: {
     background:'#fff',
-    actionOrange: '#FF8364',
+    actionColor: 'cornflowerblue',
+    actionHover: '#FF8364',
+
+    themeButtonBackground: 'cornflowerblue',
+    themeButtonColor: '#fff',
+    themeButtonHoverBackground: '#000',
+    themeButtonHoverColor: '#fff',
+
     buttonHover: '#fff',
     color: '#000',
     textColor: '#616161',
@@ -32,11 +43,16 @@ const theme = {
     anchor: '#FF8364',
     imageBackground: '#000',
     inputBackground: '#f3f3f3',
-    iconColor: 'cornflowerblue'
+
   },
   dark: {
     background:'#000',
-    actionOrange: '#FF8364',
+    actionColor: '#FF8364',
+    actionHover: '#fff',
+    themeButtonBackground: 'cornflowerblue',
+    themeButtonColor: '#fff',
+    themeButtonHoverBackground: '#fff',
+    themeButtonHoverColor: 'cornflowerblue',
     buttonHover: '#000',
     color: '#fff',
     textColor: '#BABABA',
@@ -44,7 +60,7 @@ const theme = {
     anchor: '#FF8364',
     imageBackground: '#000',
     inputBackground: '#212121',
-    iconColor: '#fff'
+
   }
 }
 
@@ -53,7 +69,9 @@ const Layout = ({mode, children}) => {
   return (
     <ThemeProvider theme={theme[mode]}>
       <PageContainer>
-        {children}
+        <PageInnerContainer>
+          {children}
+        </PageInnerContainer>
       </PageContainer>
     </ThemeProvider>
   );
