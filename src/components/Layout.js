@@ -41,7 +41,7 @@ const theme = {
     textColor: '#616161',
     experienceSkills: 'orange',
     anchor: '#FF8364',
-    imageBackground: '#000',
+    imageBackground: 'cornflowerblue',
     inputBackground: '#f3f3f3',
 
   },
