@@ -3,12 +3,12 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 const Container =  styled.div`
-  background: #000;
+  background: ${props => props.theme.background};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 90px 0 160px 0;
-  color: white;
+  color: ${props => props.theme.color};
   @media(max-width: 1024px) {
     justify-content: space-between;
     padding: 0;

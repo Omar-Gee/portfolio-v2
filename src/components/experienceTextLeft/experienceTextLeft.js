@@ -8,8 +8,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
-  background: #000;
+  color: ${props => props.theme.color};
+  background: ${props => props.theme.background};
   @media(max-width: 768px) {
     display: unset;
     position: static;
@@ -25,6 +25,7 @@ const LeftContent = styled.div`
 `
 
 const Image = styled(Img)`
+  background: ${props => props.theme.background}
   margin-left: 64px;
   width: 540px;
   @media(max-width: 768px) {

@@ -7,8 +7,8 @@ const Container = styled.div`
   padding: 40px 0;
   display: flex;
   justify-content: center;
-  color: #fff;
-  background-color: #000;
+  color: ${props => props.theme.color};
+  background-color: ${props => props.theme.background};
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: normal;

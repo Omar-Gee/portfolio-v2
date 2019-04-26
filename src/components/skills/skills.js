@@ -3,9 +3,9 @@ import styled from "styled-components"
 // import { container, title, list, listItem, skillGroup, middleGroup, groupContainer } from "./skills.module.scss"
 
 const Container = styled.div`
-  background: #000;;
+  background: ${props => props.theme.background};
   padding: 64px 0;
-  color: #fff;
+  color: ${props => props.theme.color};
   @media(max-width: 425px) {
     padding: 16px 0
     clear: left;

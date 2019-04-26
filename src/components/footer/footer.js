@@ -3,11 +3,11 @@ import styled from "styled-components"
 // import footerStyles from "./footer.module.scss"
 
 const Container = styled.div`
-padding-top: 50px;
+  padding-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #000;
+  background: ${props => props.theme.background};
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: normal;
@@ -15,7 +15,7 @@ padding-top: 50px;
   line-height: 24px;
   letter-spacing: -0.1px;
   height: 118px;
-  color: #fff;
+  color: ${props => props.theme.color};
   @media(max-width: 425px){
     position: static;
     display: unset;
@@ -85,11 +85,11 @@ const Anchor = styled.a`
   color: #FF8364;
   &:hover {
     cursor: pointer;
-    color: #fff;
+    color: ${props => props.theme.color};
   }
 `
 
-const footer = () => {
+const footer = (props) => {
   return (
     <footer>
       <Container>

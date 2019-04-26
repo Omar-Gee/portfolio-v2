@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #000;
+  background: ${props => props.theme.background};
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: normal;
@@ -90,7 +90,7 @@ const ListItemRight = styled.li`
 `
 const Anchor = styled.a`
   text-decoration: none;
-  color: #FFF;
+  color: ${props => props.theme.color};
   line-height: normal;
   letter-spacing: 0.4px;
   text-transform: uppercase;
@@ -102,11 +102,11 @@ const Anchor = styled.a`
 `
 
 const Button = styled.button`
-  background: #000;
+  background: ${props => props.theme.background};
   border: none;
   font-weight: bold;
   text-decoration: none;
-  color: #FFF;
+  color: ${props => props.theme.color};
   line-height: normal;
   letter-spacing: 0.4px;
   text-transform: uppercase;
@@ -120,9 +120,11 @@ const Button = styled.button`
     padding: 0;
   }
 `
-const Header = () =>{
+
+
+const Header = ({ setMode }) =>{
   const handleThemeChange = (e) => {
-    console.log(e.target.name);
+    setMode(e.target.name)
   }
   return (
     <header>
@@ -133,8 +135,8 @@ const Header = () =>{
           <ListItemLeft><Anchor href="#contact">Contact</Anchor></ListItemLeft>
         </List>
         <List>
-          <ListItemRight><Button name="dark-mode" >Dark mode</Button></ListItemRight>
-          <ListItemRight><Button name="light-mode">Light mode</Button></ListItemRight>
+          <ListItemRight><Button name="dark" onClick={handleThemeChange}>Dark mode</Button></ListItemRight>
+          <ListItemRight><Button name="light" onClick={handleThemeChange}>Light mode</Button></ListItemRight>
         </List>
       </Container>
     </header>

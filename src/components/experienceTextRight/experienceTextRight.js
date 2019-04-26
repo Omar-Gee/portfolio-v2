@@ -8,8 +8,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
-  background: #000;
+  color: ${props => props.theme.color};
+  background: ${props => props.theme.background};
   @media(max-width: 768px) {
     display: unset;
     text-align: center;

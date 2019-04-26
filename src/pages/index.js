@@ -8,56 +8,30 @@ import ExperienceTextRight from  "../components/experienceTextRight/experienceTe
 import Skills from  "../components/skills/skills"
 import Contact from "../components/contact/contact"
 import SEO from "../components/seo"
-import { ThemeProvider } from "styled-components"
+import Layout from "../components/Layout"
+
 import { graphql } from "gatsby"
-// import { ThemeProvider } from "../components/utils/themeContext"
 require('typeface-ibm-plex-sans')
 
-const PageContainer = styled.div`
-  padding: 20px 128px;
-  background: #000;
-  @media(min-width:1500px) {
-    margin: auto;
-    width: 60%;
-    padding:20px 128px;
-  }
-  @media(max-width: 1024px) {
-    padding: 20px 64px;
-  }
-  @media(max-width: 768px) {
-    padding: 20px 48px;
-  }
-  @media(max-width: 425px) {
-    padding: 20px 24px;
-  }
-  @media(max-width: 375px) {
 
-  }
-  @media(max-width: 320px) {
-
-  }
-`
 
 const IndexPage = ({ data }) => {
-  //console.log(data.bdclogo);
-  const theme = {
-    main: "dark-mode",
-  }
+  const [mode, setMode] = React.useState('dark')
+
   return (
-    <PageContainer>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <ThemeProvider theme={theme}>
-        <>
-          <Header />
+      <>
+        <Layout mode={mode}>
+          <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+          <Header setMode={setMode} />
           <Intro {...data.intro} />
           <ExperienceTextLeft {...data.bdclogo}  />
           <ExperienceTextRight {...data.pblogo} />
           <Skills />
           <Contact />
           <Footer />
-        </>
-      </ThemeProvider>
-    </PageContainer>
+        </Layout>
+      </>
+
 
   )
 }
