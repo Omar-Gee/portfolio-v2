@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: 'https://omargeerman.dev/',
   },
   plugins: [
-    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
