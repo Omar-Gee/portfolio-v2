@@ -9,7 +9,7 @@ const Container = styled.div`
   padding: 64px 0;
   color: ${props => props.theme.color};
   @media(max-width: 425px) {
-    padding: 16px 0
+    padding: 16px 0;
     clear: left;
   }
 `
