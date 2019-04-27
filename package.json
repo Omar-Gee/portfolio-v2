@@ -24,6 +24,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.6.1",
     "save": "^2.3.3",
+    "serverless": "^1.41.1",
     "storybook": "^1.0.0",
     "styled-components": "^4.2.0",
     "typeface-ibm-plex-sans": "0.0.61"
