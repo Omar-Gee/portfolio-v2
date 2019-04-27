@@ -175,16 +175,18 @@ const IconLink = styled.a`
 
 const contact = () => {
   const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [reply_to, setReplyTo] = useState('')
   const [message, setMessage] = useState('')
+  const [formResponse, setFormResponse] = useState('')
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
     switch (name) {
       case "name":
-        setName(value)
+        setName(value.charAt(0).toUpperCase() + value.toLowerCase().slice(1))
         break
       case "email":
-       setEmail(value)
+        setReplyTo(value.toLowerCase())
         break
       case "message":
         setMessage(value)
@@ -195,12 +197,32 @@ const contact = () => {
 
   }
   const handleSubmit = (e) => {
-    const formattedName = name.charAt(0).toUpperCase() + name.slice(1)
-    alert(`Oops!, it seems like you got far on my site ${formattedName}. Unfortunately I haven't set up the back-end part of this form yet. I have taken the liberty of opening your default email client with your message already attached. Sorry for the inconvenience.`)
-    window.open(`mailto:omargeerman@gmail.com?subject=${email}&body=${message}`);
+    e.preventDefault()
+    const data = {
+      name,
+      reply_to,
+      message
+    }
+
+    // Construct an HTTP request
+    const xhr = new XMLHttpRequest()
+    xhr.open("Post", "https://v6vrlgsk32.execute-api.us-east-1.amazonaws.com/dev/mailService", true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
+    // Send the collected data as JSON
+    xhr.send(JSON.stringify(data))
+
+    xhr.onloadend = response => {
+      const status = response.target.status;
+      if (status === 200) {
+        setFormResponse('succes')
+      } else {
+        setFormResponse('failure')
+      }
+    }
+
   }
   return (
-    <section id="contact">
+    <section id="contact" method="POST">
       <Container>
         <LeftContent>
           <Title>Contact</Title>
@@ -208,12 +230,13 @@ const contact = () => {
               Questions? Submit the form or mail me.
               I will get back to you as soon as I can.
             </Text>
-            <Form action="">
+            <Form action="https://v6vrlgsk32.execute-api.us-east-1.amazonaws.com/dev/mailService" method="POST">
               <Input name="name" type="text" placeholder="Name" onChange={handleInputChange} />
               <Input name="email" type="email" placeholder="Email" onChange={handleInputChange} />
               <TextArea name="message" id="" cols="30" rows="10" placeholder="Message" onChange={handleInputChange} />
               <Button type="sumbit" onClick={handleSubmit}>Send</Button>
             </Form>
+            {formResponse === "succes" ? <p>Thank you for contacting me! I'll get back to you shortly</p> : null}
         </LeftContent>
         <RightContent>
           <List>
