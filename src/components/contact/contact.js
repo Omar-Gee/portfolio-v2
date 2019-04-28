@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components"
 import {FaTwitter, FaGithub} from "react-icons/fa"
 import { useState } from "react";
+import handleEmailServiceRequest from "../../utils/handleEmailServiceRequest"
 
 const Container = styled.div`
   font-family: IBM Plex Sans;
@@ -69,6 +70,10 @@ transition: all 0.3s ease;
   &:hover {
     box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
   }
+  &:invalid:focus {
+    background: ${props => props.theme.actionColor};
+    color: white;
+  }
   @media(max-width: 425px){
     width: 280px;
   }
@@ -95,6 +100,10 @@ transition: all 0.3s ease;
   }
   @media(max-width: 320px){
     width: 224px;
+  }
+  &:invalid:focus {
+    background: ${props => props.theme.actionColor};
+    color: white
   }
 `
 const Button = styled.button`
@@ -172,18 +181,30 @@ const IconLink = styled.a`
     color: ${props => props.theme.actionHover};
   }
 `
+const Error = styled.p`
+  width:350px;
+  height:25px;
+  color: ${props => props.theme.validationErrorColor};
+  @media(max-width: 425px){
 
+  }
+  @media(max-width: 425px){
+    width: 280px;
+    margin: 16px auto;
+  }
+`
 const contact = () => {
-  const [name, setName] = useState('')
-  const [reply_to, setReplyTo] = useState('')
-  const [message, setMessage] = useState('')
-  const [formResponse, setFormResponse] = useState('')
+  const [name, setName] = useState("")
+  const [reply_to, setReplyTo] = useState("")
+  const [message, setMessage] = useState("")
+  const [formResponse, setFormResponse] = useState("")
+  const [validationError, setValidationError] = useState("")
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
     switch (name) {
       case "name":
-        setName(value.charAt(0).toUpperCase() + value.toLowerCase().slice(1))
+        setName(value)
         break
       case "email":
         setReplyTo(value.toLowerCase())
@@ -194,32 +215,36 @@ const contact = () => {
       default:
         return null
     }
-
   }
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const data = {
-      name,
-      reply_to,
-      message
+    setValidationError("")
+    const nameField = document.getElementById('name')
+    const emailField = document.getElementById('email');
+    const textField = document.getElementById('message')
+
+    const isValidName = nameField.checkValidity()
+    const isValidEmail = emailField.checkValidity()
+    const isValidText = textField.checkValidity()
+
+    if (!isValidName) {
+      setValidationError("Name needs to be at least two characters long and not contain numbers.")
+    } else if (!isValidEmail) {
+      setValidationError("Please fill in a valid email address.")
+    } else if (!isValidText) {
+      setValidationError("Message has to be more than five complete words long.")
     }
 
-    // Construct an HTTP request
-    const xhr = new XMLHttpRequest()
-    xhr.open("Post", "https://v6vrlgsk32.execute-api.us-east-1.amazonaws.com/dev/mailService", true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
-    // Send the collected data as JSON
-    xhr.send(JSON.stringify(data))
-
-    xhr.onloadend = response => {
-      const status = response.target.status;
-      if (status === 200) {
-        setFormResponse('succes')
-      } else {
-        setFormResponse('failure')
+    if (isValidEmail && isValidName && isValidText) {
+      const data = {
+        name,
+        reply_to,
+        message
       }
+      const response = await handleEmailServiceRequest(data, setFormResponse)
+      setFormResponse(response)
     }
-
   }
   return (
     <section id="contact" method="POST">
@@ -231,12 +256,40 @@ const contact = () => {
               I will get back to you as soon as I can.
             </Text>
             <Form action="https://v6vrlgsk32.execute-api.us-east-1.amazonaws.com/dev/mailService" method="POST">
-              <Input name="name" type="text" placeholder="Name" onChange={handleInputChange} />
-              <Input name="email" type="email" placeholder="Email" onChange={handleInputChange} />
-              <TextArea name="message" id="" cols="30" rows="10" placeholder="Message" onChange={handleInputChange} />
-              <Button type="sumbit" onClick={handleSubmit}>Send</Button>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Name"
+                onChange={handleInputChange}
+                minLength="2"
+                pattern="^[A-Za-z]+$"
+                required
+              />
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                onChange={handleInputChange}
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                required
+              />
+              <TextArea
+                id="message"
+                name="message"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+                onChange={handleInputChange}
+                valid={message.valid}
+                minLength="20"
+                required
+              />
+              <Button type="submit" onClick={handleSubmit}>Send</Button>
             </Form>
-            {formResponse === "succes" ? <p>Thank you for contacting me! I'll get back to you shortly</p> : null}
+            <Error id="validationError">{validationError}</Error>
+            { formResponse !== "" ? <Error>{formResponse}</Error> : <Error></Error> }
         </LeftContent>
         <RightContent>
           <List>

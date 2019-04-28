@@ -30,12 +30,10 @@ const theme = {
     background:'#fff',
     actionColor: 'cornflowerblue',
     actionHover: '#FF8364',
-
     themeButtonBackground: 'cornflowerblue',
     themeButtonColor: '#fff',
     themeButtonHoverBackground: '#000',
     themeButtonHoverColor: '#fff',
-
     buttonHover: '#fff',
     color: '#000',
     textColor: '#616161',
@@ -43,7 +41,7 @@ const theme = {
     anchor: '#FF8364',
     imageBackground: 'cornflowerblue',
     inputBackground: '#f3f3f3',
-
+    validationErrorColor: 'red',
   },
   dark: {
     background:'#000',
@@ -60,7 +58,7 @@ const theme = {
     anchor: '#FF8364',
     imageBackground: '#000',
     inputBackground: '#212121',
-
+    validationErrorColor: 'yellow',
   }
 }
 
