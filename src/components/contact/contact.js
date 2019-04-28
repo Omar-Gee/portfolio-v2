@@ -62,7 +62,7 @@ background: ${props => props.theme.inputBackground};
 border-radius: 8px;
 width: 350px;
 height: 58px;
-border: none;
+border: 1px solid ${props => props.theme.formBorderColor};
 color: ${props => props.theme.textColor};
 padding-left: 32px;
 margin: 5px 0;
@@ -70,9 +70,16 @@ transition: all 0.3s ease;
   &:hover {
     box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
   }
+  &:focus {
+    outline: none;
+  }
   &:invalid:focus {
-    background: ${props => props.theme.actionColor};
-    color: white;
+    border:1px solid red;
+    outline: none;
+  }
+  &:valid:focus {
+    border:1px solid ${props => props.theme.formBorderValidColor};
+    outline: none;
   }
   @media(max-width: 425px){
     width: 280px;
@@ -85,7 +92,7 @@ const TextArea = styled.textarea`
 padding: 16px 0 0 32px;
 background: ${props => props.theme.inputBackground};
 border-radius: 8px;
-border: none;
+border: 1px solid ${props => props.theme.formBorderColor};
 color: ${props => props.theme.textColor};
 margin: 5px 0 10px 0;
 width: 350px;
@@ -101,15 +108,22 @@ transition: all 0.3s ease;
   @media(max-width: 320px){
     width: 224px;
   }
+  &:focus {
+    outline: none;
+  }
   &:invalid:focus {
-    background: ${props => props.theme.actionColor};
-    color: white
+    border:1px solid red;
+    outline: none;
+  }
+  &:valid:focus {
+    border:1px solid ${props => props.theme.formBorderValidColor};
+    outline: none;
   }
 `
 const Button = styled.button`
   margin: 10px 0;
   border: none;
-  background: ${props => props.theme.actionColor};
+  background: ${props => props.theme.themeButtonBackground};
   border-radius: 8px;
   width: 200px;
   height: 58px;
@@ -120,9 +134,10 @@ const Button = styled.button`
   color: #FFFFFF;
   transition: all 0.3s ease;
     &:hover {
-      background: ${props => props.theme.actionHover};
-      color: ${props => props.theme.buttonHover};
+      background: ${props => props.theme.themeButtonHoverBackground};
+      color: ${props => props.theme.themeButtonColor};
       box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.35);
+      cursor: pointer;
     }
   @media(max-width: 425px){
     margin: 10px auto;
