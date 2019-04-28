@@ -278,7 +278,7 @@ const contact = () => {
                 placeholder="Name"
                 onChange={handleInputChange}
                 minLength="2"
-                pattern="^[A-Za-z]+$"
+                pattern="^[-\sa-zA-Z]+$"
                 required
               />
               <Input
