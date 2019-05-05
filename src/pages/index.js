@@ -44,7 +44,7 @@ query {
       }
     }
   }
-  pblogo: file(relativePath: {eq: "palmera-bytes-logo-white.png"}) {
+  pblogo: file(relativePath: {eq: "palmera-bytes.png"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid_noBase64

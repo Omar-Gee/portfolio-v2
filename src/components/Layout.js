@@ -39,7 +39,7 @@ const theme = {
     textColor: '#616161',
     experienceSkills: 'orange',
     anchor: '#FF8364',
-    imageBackground: 'cornflowerblue',
+    imageBackground: '#fff',
     inputBackground: '#f3f3f3',
     validationErrorColor: 'orange',
     formBorderColor: '#fff',
