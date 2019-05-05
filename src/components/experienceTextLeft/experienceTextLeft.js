@@ -1,7 +1,35 @@
 import React from 'react';
 import styled from "styled-components"
 import Img from "gatsby-image"
-// import { container, title, list, listItem, text, leftContent, rightContent, image } from "./experience.module.scss"
+import ExperienceContent from "../reusable/experienceContent"
+
+import { skillSetOne } from  "../../data/skills.data"
+
+const experienceOne = ({ childImageSharp }) => {
+  return (
+    <section id="experience">
+      <Container>
+        <ImageSmallerScreen fluid={childImageSharp.fluid}/>
+        <LeftContent>
+          <ExperienceContent
+            title="Brazil Dental Care"
+            skills={skillSetOne}
+            text={`An appointment
+            system for a dentistry. The front end was
+            primarily build with React and Bootstrap. The back end
+            was developed in Node.js using Express.js with MongoDB as
+            the database. I played a role both in the front and
+            backend development.`}
+          />
+        </LeftContent>
+        <Image fluid={childImageSharp.fluid}  />
+      </Container>
+    </section>
+  );
+};
+
+export default experienceOne;
+
 const Container = styled.div`
   width:100%;
   padding: 110px 0;
@@ -40,73 +68,3 @@ const ImageSmallerScreen = styled(Img)`
     margin: 40px 16px;
   }
 `
-const Title = styled.h1`
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: -0.2px;
-  @media(max-width: 768px) {
-    display:none;
-  }
-`
-const Text = styled.p`
-  color: ${props => props.theme.textColor};
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: -0.2px;
-  @media(max-width: 425px) {
-    float: left;
-  }
-`
-const List = styled.ul`
-  display: block;
-  padding: 0;
-  list-style: none;
-`
-const ListItem = styled.li`
-  display: inline-block;
-  margin: 2px 8px 2px 0;
-  padding: 2px 4px 2px 0;
-  width:fit-content;
-  color: ${props => props.theme.experienceSkills};
-  font-family: IBM Plex Sans;
-  letter-spacing: -0.2px;
-`
-
-const experienceOne = ({ childImageSharp }) => {
-  return (
-    <section id="experience">
-      <Container>
-        <ImageSmallerScreen fluid={childImageSharp.fluid}/>
-        <LeftContent>
-          <Title>Brazil Dental Care</Title>
-          <List>
-            <ListItem>React</ListItem>
-            <ListItem>Bootstrap</ListItem>
-            <ListItem>Nodejs</ListItem>
-            <ListItem>Expressjs</ListItem>
-            <ListItem>Passportjs</ListItem>
-            <ListItem>Mongoose</ListItem>
-            <ListItem>MongoDB</ListItem>
-          </List>
-          <Text>
-            An appointment
-            system for a dentistry. The front end was
-            primarily build with React and Bootstrap. The back end
-            was developed in Node.js using Express.js with MongoDB as
-            the database. I played a role both in the front and
-            backend development.
-          </Text>
-        </LeftContent>
-        <Image fluid={childImageSharp.fluid}  />
-      </Container>
-    </section>
-  );
-};
-
-export default experienceOne;

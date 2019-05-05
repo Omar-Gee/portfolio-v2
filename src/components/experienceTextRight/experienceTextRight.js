@@ -1,6 +1,29 @@
 import React from 'react';
 import styled from "styled-components"
 import Img from "gatsby-image"
+import ExperienceContent from "../reusable/experienceContent"
+
+import { skillSetTwo} from  "../../data/skills.data"
+
+const experienceTwo = ({ childImageSharp }) => {
+  return (
+    <section>
+      <Container>
+        <Image fluid={childImageSharp.fluid} />
+        <RightContent>
+          <ExperienceContent
+            title="Palmera Bytes Website"
+            skills={skillSetTwo}
+            text={`A static website built with Gatsby. The design was implemented using Storybook and Styled Components.
+            The data is being queried with Graphql with the CMS Prismic as data source. The website is hosted on Netlify.`}
+          />
+        </RightContent>
+      </Container>
+    </section>
+  );
+};
+
+export default experienceTwo;
 
 const Container = styled.div`
   font-family: IBM Plex Sans;
@@ -42,72 +65,3 @@ const Image = styled(Img)`
     margin: auto;
   }
 `
-const Title = styled.h1`
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: -0.2px;
-  @media(max-width: 768px) {
-    display:none;
-  }
-`
-const Text = styled.p`
-  color: ${props => props.theme.textColor};
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: -0.2px;
-  @media(max-width: 425px) {
-    float: left;
-  }
-`
-const List = styled.ul`
-  display: block;
-  padding: 0;
-  list-style: none;
-`
-const ListItem = styled.li`
-  display: inline-block;
-  margin: 2px 8px 2px 0;
-  padding: 2px 4px 2px 0;
-  width:fit-content;
-  color: ${({ theme }) => theme.experienceSkills};
-  letter-spacing: -0.2px;
-`
-const Anchor = styled.a`
-  color: ${({ theme }) => theme.actionColor};
-  text-decoration: none;
-  &:hover {
-    color: ${({ theme }) => theme.actionHover};
-  }
-`
-
-const experienceTwo = ({ childImageSharp }) => {
-  return (
-    <section>
-      <Container>
-          <Image fluid={childImageSharp.fluid} />
-          {/* <Image src={image.fluid} alt="Palmera bytes logo" /> */}
-        <RightContent>
-          <Title>Palmera Bytes Website</Title>
-          <List>
-            <ListItem>Gatsby</ListItem>
-            <ListItem>Storybook</ListItem>
-            <ListItem>Styled Components</ListItem>
-            <ListItem>Graphql</ListItem>
-            <ListItem>Prismic</ListItem>
-            <ListItem>CMS</ListItem>
-          </List>
-          <Text>
-            A static website built with Gatsby. The design was implemented using Storybook and Styled Components.
-            The data is being queried with Graphql with the CMS Prismic as data source. The website is hosted on Netlify and is viewable
-            {" "}<Anchor href="https://palmerabytes.com/">here</Anchor>.
-          </Text>
-        </RightContent>
-      </Container>
-
-    </section>
-  );
-};
-
-export default experienceTwo;

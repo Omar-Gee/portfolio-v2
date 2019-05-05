@@ -94,7 +94,7 @@ const footer = (props) => {
   return (
     <footer>
       <Container>
-        <Text>Copyright Omar Geerman 2019</Text>
+        <Text>© Omar Geerman 2019</Text>
         <List>
           <ListItem><Anchor href="#experience">Experience</Anchor></ListItem>
           <ListItem><Anchor href="#skills">Skills</Anchor></ListItem>
