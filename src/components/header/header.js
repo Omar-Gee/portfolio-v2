@@ -1,5 +1,32 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby";
+
+const Header = ({ mode, setMode }) => {
+  const handleThemeChange = (e) => {
+    if (e.target.id === 'dark') {
+      setMode('light')
+    } else {
+      setMode('dark')
+    }
+  }
+  return (
+    <header>
+      <Container>
+        <List>
+          <ListItemLeft><StyledAnchor to="/">Home</StyledAnchor></ListItemLeft>
+          <ListItemLeft><StyledAnchor to="/#experience">Experience</StyledAnchor></ListItemLeft>
+          <ListItemLeft><StyledAnchor to="/#skills">Skills</StyledAnchor></ListItemLeft>
+          <ListItemLeft><StyledAnchor to="/#contact">Contact</StyledAnchor></ListItemLeft>
+          <ListItemLeft><StyledAnchor to="/repos">Repos</StyledAnchor></ListItemLeft>
+        </List>
+        <ThemeButton id={mode} onClick={handleThemeChange}>{mode === 'dark' ? 'light' : 'dark'} mode</ThemeButton>
+      </Container>
+    </header>
+  )
+}
+
+export default Header
 
 const Container = styled.div`
   font-family: IBM Plex Sans;
@@ -55,7 +82,7 @@ const ListItemLeft = styled.li`
   }
 `
 
-const Anchor = styled.a`
+const StyledAnchor = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.actionColor};
   line-height: normal;
@@ -97,29 +124,4 @@ const ThemeButton = styled.div`
     margin-top: 56px;
     margin-bottom: 8px;
   }
-
 `
-
-const Header = ({ mode, setMode }) =>{
-  const handleThemeChange = (e) => {
-    if (e.target.id === 'dark'){
-      setMode('light')
-    } else {
-      setMode('dark')
-    }
-  }
-  return (
-    <header>
-      <Container>
-        <List>
-          <ListItemLeft><Anchor href="#experience">Experience</Anchor></ListItemLeft>
-          <ListItemLeft><Anchor href="#skills">Skills</Anchor></ListItemLeft>
-          <ListItemLeft><Anchor href="#contact">Contact</Anchor></ListItemLeft>
-        </List>
-        <ThemeButton id={mode} onClick={handleThemeChange}>{mode === 'dark' ? 'light':'dark'} mode</ThemeButton>
-      </Container>
-    </header>
-  )
-}
-
-export default Header

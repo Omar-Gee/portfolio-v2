@@ -2,34 +2,34 @@ import React from "react"
 import Header from "../components/header/header"
 import Footer from "../components/footer/footer"
 import Intro from "../components/intro/intro"
-import ExperienceTextLeft from  "../components/experienceTextLeft/experienceTextLeft"
-import ExperienceTextRight from  "../components/experienceTextRight/experienceTextRight"
-import Skills from  "../components/skills/skills"
+import ExperienceTextLeft from "../components/experienceTextLeft/experienceTextLeft"
+import ExperienceTextRight from "../components/experienceTextRight/experienceTextRight"
+import Skills from "../components/skills/skills"
 import Contact from "../components/contact/contact"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
+import githubService from "../services/githubService"
 
 require('typeface-ibm-plex-sans')
 
 const IndexPage = ({ data }) => {
+  githubService()
   const [mode, setMode] = React.useState('dark')
 
   return (
-      <>
-        <Layout mode={mode}>
-          <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-          <Header mode={mode} setMode={setMode} />
-          <Intro {...data.intro} />
-          <ExperienceTextLeft {...data.bdclogo}  />
-          <ExperienceTextRight {...data.pblogo} />
-          <Skills />
-          <Contact />
-          <Footer />
-        </Layout>
-      </>
-
-
+    <>
+      <Layout mode={mode}>
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <Header mode={mode} setMode={setMode} />
+        <Intro {...data.intro} />
+        <ExperienceTextLeft {...data.bdclogo} />
+        <ExperienceTextRight {...data.pblogo} />
+        <Skills />
+        <Contact />
+        <Footer />
+      </Layout>
+    </>
   )
 }
 
