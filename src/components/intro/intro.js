@@ -2,13 +2,34 @@ import React from 'react';
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-const Container =  styled.div`
+const intro = ({ childImageSharp }) => {
+  return (
+    <section >
+      <Container>
+        <LeftContent >
+          <Title>Omar Geerman</Title>
+          <SubTitle>JAM-stack Developer</SubTitle>
+          <Text>
+            I am a self taught developer with 2 years of experience.
+            During this period I had the opportunity to built some awesome projects with
+            some of the most exciting tools and frameworks for web development. Below are a few examples.
+          </Text>
+        </LeftContent>
+        <Image fluid={childImageSharp.fluid} />
+      </Container>
+    </section>
+  );
+};
+
+export default intro;
+
+const Container = styled.div`
   background: ${props => props.theme.background};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 90px 0 160px 0;
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.color}!important;
   @media(max-width: 1024px) {
     justify-content: space-between;
     padding: 0;
@@ -59,28 +80,3 @@ const Text = styled.p`
   letter-spacing: -0.2px;
   color: ${props => props.theme.textColor};
 `
-
-const intro = ({ childImageSharp }) => {
-  return (
-    <section >
-      <Container>
-        <LeftContent >
-          <Title>Omar Geerman</Title>
-          <SubTitle>JAM-stack Developer</SubTitle>
-          <Text>
-            I am a self taught developer with 2 years of experience.
-            During this period I had the opportunity to built some awesome projects with
-            some of the most exciting tools and frameworks for web development. Below are a few examples.
-          </Text>
-        </LeftContent>
-
-          <Image fluid={childImageSharp.fluid} />
-
-      </Container>
-
-
-    </section>
-  );
-};
-
-export default intro;

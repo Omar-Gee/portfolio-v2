@@ -15,7 +15,7 @@ require('typeface-ibm-plex-sans')
 
 const IndexPage = ({ data }) => {
   githubService()
-  const [mode, setMode] = React.useState('dark')
+  const [mode, setMode] = React.useState('light')
 
   return (
     <>

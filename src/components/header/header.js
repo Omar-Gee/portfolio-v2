@@ -3,13 +3,13 @@ import styled from "styled-components"
 import { Link } from "gatsby";
 
 const Header = ({ mode, setMode }) => {
-  const handleThemeChange = (e) => {
-    if (e.target.id === 'dark') {
-      setMode('light')
-    } else {
-      setMode('dark')
-    }
-  }
+  // const handleThemeChange = (e) => {
+  //   if (e.target.id === 'dark') {
+  //     setMode('light')
+  //   } else {
+  //     setMode('dark')
+  //   }
+  // }
   return (
     <header>
       <Container>
@@ -20,7 +20,7 @@ const Header = ({ mode, setMode }) => {
           <ListItemLeft><StyledAnchor to="/#contact">Contact</StyledAnchor></ListItemLeft>
           <ListItemLeft><StyledAnchor to="/repos">Repos</StyledAnchor></ListItemLeft>
         </List>
-        <ThemeButton id={mode} onClick={handleThemeChange}>{mode === 'dark' ? 'light' : 'dark'} mode</ThemeButton>
+
       </Container>
     </header>
   )
@@ -95,33 +95,33 @@ const StyledAnchor = styled(Link)`
   }
 `
 
-const ThemeButton = styled.div`
-  background: ${props => props.theme.themeButtonBackground};
-  color: ${props => props.theme.themeButtonColor};
-  width: fit-content;
-  padding: 8px;
-  margin: 4px;
-  border-radius: 8px;
-  font-weight: bold;
-  line-height: normal;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  font-size: 14px;
-  &:hover {
-    background: ${props => props.theme.themeButtonHoverBackground};
-    color: ${props => props.theme.themeButtonHoverColor};
-    cursor: pointer;
-  }
-  @media(max-width: 520px) {
-    text-align: center;
-    width: 120px;
-    margin: auto;
-  }
-  @media(max-width: 425px) {
-    text-align: center;
-    width: 120px;
-    margin: auto;
-    margin-top: 56px;
-    margin-bottom: 8px;
-  }
-`
+// const ThemeButton = styled.div`
+//   background: ${props => props.theme.themeButtonBackground};
+//   color: ${props => props.theme.themeButtonColor};
+//   width: fit-content;
+//   padding: 8px;
+//   margin: 4px;
+//   border-radius: 8px;
+//   font-weight: bold;
+//   line-height: normal;
+//   letter-spacing: 0.4px;
+//   text-transform: uppercase;
+//   font-size: 14px;
+//   &:hover {
+//     background: ${props => props.theme.themeButtonHoverBackground};
+//     color: ${props => props.theme.themeButtonHoverColor};
+//     cursor: pointer;
+//   }
+//   @media(max-width: 520px) {
+//     text-align: center;
+//     width: 120px;
+//     margin: auto;
+//   }
+//   @media(max-width: 425px) {
+//     text-align: center;
+//     width: 120px;
+//     margin: auto;
+//     margin-top: 56px;
+//     margin-bottom: 8px;
+//   }
+// `

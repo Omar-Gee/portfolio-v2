@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { ThemeProvider } from "styled-components"
 
-const PageContainer =styled.div`
+const PageContainer = styled.div`
   background: ${props => props.theme.background};
 `
 
@@ -27,7 +27,7 @@ const PageInnerContainer = styled.div`
 `
 const theme = {
   light: {
-    background:'#fff',
+    background: '#fff',
     actionColor: 'cornflowerblue',
     actionHover: '#FF8364',
     themeButtonBackground: 'cornflowerblue',
@@ -46,7 +46,7 @@ const theme = {
     formBorderValidColor: 'springgreen',
   },
   dark: {
-    background:'#000',
+    background: '#000',
     actionColor: '#FF8364',
     actionHover: '#fff',
     themeButtonBackground: '#FF8364',
@@ -67,7 +67,7 @@ const theme = {
 }
 
 
-const Layout = ({mode, children}) => {
+const Layout = ({ mode, children }) => {
   return (
     <ThemeProvider theme={theme[mode]}>
       <PageContainer>
