@@ -76,7 +76,6 @@ const Repos = () => {
             )
           }
         </Row>
-        <Link to="/">Go back to the homepage</Link>
       </Layout>
 
     </>
