@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 // import githubService from "../services/githubService"
 import styled from "styled-components"
 import 'antd/dist/antd.css';
-import { Card, Row, Col, Icon, Divider } from "antd"
+import { Card, Row, Col, Icon, Divider, Alert } from "antd"
 
 const Repos = () => {
   const [mode, setMode] = React.useState('dark')
@@ -37,6 +37,7 @@ const Repos = () => {
         <Header mode={mode} setMode={setMode} />
         <SEO title="Github Repositories" />
         {didCopy && <ConfirmCopy> Clone URL Copied to Clipboard!</ConfirmCopy>}
+        <Alert message="This page is a work in progess" type="error" style={{ textAlign: 'center', fontSize: '2rem', margin: '2rem 0'}} />
         <h1>Github Repositories</h1>
         <Divider />
         <Row type="flex" justify="space-around" gutter={64}>
